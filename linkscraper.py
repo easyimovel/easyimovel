@@ -54,5 +54,4 @@ try:
     print(f"Coleta concluída! {len(all_links)} links salvos em '{output_file}'.")
 
 finally:
-    driver.quit()
- 
+    driver.quit() 
