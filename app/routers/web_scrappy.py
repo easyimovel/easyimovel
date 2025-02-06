@@ -16,7 +16,7 @@ from pprint import pprint, pformat
 from urllib.parse import urlencode, urljoin, urlparse, parse_qs, urlunparse, unquote
 from fnmatch import fnmatch
 
-from fastapi import APIRouter, Request, status, Body, HTTPException, Query
+from fastapi import APIRouter, Request, status, Body, HTTPException, Query, Depends
 from fastapi_versioning import version
 from fastapi.responses import FileResponse, JSONResponse
 
@@ -28,7 +28,7 @@ from scrapy_splash import SplashRequest
 from twisted.internet import asyncioreactor
 
 from app.utils.db import get_session
-from app.util.auth import get_users
+from app.utils.auth import get_users
 
 
 logger = logging.getLogger("EasyImovelAPI")

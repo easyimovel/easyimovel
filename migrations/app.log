@@ -2,3 +2,11 @@
 2025-02-06 15:04:24,473 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
 2025-02-06 15:20:21,484 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
 2025-02-06 15:22:13,149 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
+2025-02-06 15:31:35,897 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
+2025-02-06 15:31:35,940 - SmartyUtilsAPI - Migrations - INFO - Inserindo o registro inicial na tabela schema_info
+2025-02-06 15:31:38,704 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
+2025-02-06 15:31:38,711 - asyncmy - WARNING - Table 'schema_info' already exists
+2025-02-06 15:31:38,713 - SmartyUtilsAPI - Migrations - INFO - Tabela schema_info já existe e contém registros.
+2025-02-06 15:33:03,762 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
+2025-02-06 15:33:03,769 - asyncmy - WARNING - Table 'schema_info' already exists
+2025-02-06 15:33:03,771 - SmartyUtilsAPI - Migrations - INFO - Tabela schema_info já existe e contém registros.

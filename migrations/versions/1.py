@@ -32,7 +32,7 @@ async def up():
 	except:
 		pass
 	await db.insert(f"""
-		INSERT INTO users (user_name, full_name, email, pass, disable)
+		INSERT INTO api_users (user_name, full_name, email, pass, disable)
 		VALUES
 		('admin', 'Admin', 'contatoeasyimovel@gmail.com', '{hashed_password}', 0)
 	""")

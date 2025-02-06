@@ -12,3 +12,90 @@
 2025-02-04 21:04:53,012 - uvicorn.error - INFO - Waiting for application startup.
 2025-02-04 21:04:53,012 - uvicorn.error - INFO - Application startup complete.
 2025-02-04 21:04:53,013 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-02-06 15:33:51,408 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
+2025-02-06 15:33:51,418 - asyncmy - WARNING - Table 'schema_info' already exists
+2025-02-06 15:33:51,423 - SmartyUtilsAPI - Migrations - INFO - Tabela schema_info já existe e contém registros.
+2025-02-06 15:33:51,737 - SmartyUtilsAPI - Migrations - ERROR - Modulo 1 não implementado.
+2025-02-06 15:33:51,738 - SmartyUtilsAPI - Migrations - ERROR - (1146, "Table 'easyimovel.users' doesn't exist")
+2025-02-06 15:34:13,394 - SmartyUtilsAPI - Migrations - INFO - Verificando e criando tabela schema_info, se necessário
+2025-02-06 15:34:13,402 - asyncmy - WARNING - Table 'schema_info' already exists
+2025-02-06 15:34:13,406 - SmartyUtilsAPI - Migrations - INFO - Tabela schema_info já existe e contém registros.
+2025-02-06 15:34:13,435 - asyncmy - WARNING - Table 'api_users' already exists
+2025-02-06 15:38:50,048 - EasyImovelAPI - INFO - Static files mounted at /static
+2025-02-06 15:38:50,053 - uvicorn.error - INFO - Will watch for changes in these directories: ['/usr/src/environments/easyimovel']
+2025-02-06 15:38:50,054 - uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2025-02-06 15:38:50,055 - uvicorn.error - INFO - Started reloader process [26551] using WatchFiles
+2025-02-06 15:38:51,065 - EasyImovelAPI - INFO - Static files mounted at /static
+2025-02-06 15:38:51,065 - uvicorn.error - INFO - Started server process [26554]
+2025-02-06 15:38:51,068 - uvicorn.error - INFO - Waiting for application startup.
+2025-02-06 15:38:51,068 - uvicorn.error - INFO - Application startup complete.
+2025-02-06 15:38:51,141 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:51,492 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:51,843 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:52,194 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:52,545 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:52,896 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:53,246 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:53,597 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:53,948 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:54,298 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:54,649 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:55,000 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:55,351 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:55,701 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:56,052 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:56,403 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:56,754 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:57,104 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:57,455 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:57,806 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:58,157 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:58,507 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:58,858 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:59,209 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:59,559 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:38:59,910 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:00,261 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:00,612 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:00,963 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:01,314 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:01,664 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:02,015 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:02,366 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:02,717 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:03,067 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:03,418 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:03,769 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:04,120 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:04,470 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:04,821 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:05,172 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:05,523 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:05,873 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:06,224 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:06,575 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:06,926 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:07,276 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:07,627 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:07,978 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:08,329 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:08,679 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:09,030 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:09,381 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:09,732 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:10,082 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:10,433 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:10,784 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:11,135 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:11,485 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:11,836 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:12,187 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:12,538 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:12,888 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:13,239 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:13,590 - watchfiles.main - INFO - 1 change detected
+2025-02-06 15:39:13,733 - uvicorn.error - INFO - Shutting down
+2025-02-06 15:39:13,834 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-02-06 15:39:13,835 - uvicorn.error - INFO - Application shutdown complete.
+2025-02-06 15:39:13,835 - uvicorn.error - INFO - Finished server process [26554]
+2025-02-06 15:39:13,844 - uvicorn.error - INFO - Stopping reloader process [26551]
