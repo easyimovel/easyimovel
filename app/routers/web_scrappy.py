@@ -45,9 +45,10 @@ prefix_dir = "/mnt/scrappers"
     response_model=None,
 )
 @version(1, 0)
-def get_editals(
+async def get_editals(
     request: Request,
     db = Depends(get_session),
 ) -> Union[List[FileResponse], HTTPException, JSONResponse]:
-    print(get_users(db))
-    return JSONResponse(status_code=201, content={"detail": "Process successfully started."})
+    # users = await get_users(db)
+    # print(users)
+    return JSONResponse(status_code=201, content={"detail": "ok"})

@@ -10,6 +10,8 @@ from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 
+from app.utils.db import get_session
+
 
 logger = logging.getLogger("SmartyUtilsAPI")
 # Configurações (idealmente, você colocaria isso em um arquivo de configuração ou variáveis de ambiente)
@@ -22,7 +24,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 async def get_users(db):
-    sql = "SELECT * FROM users"
+    sql = "SELECT * FROM api_users"
     users = await db.fetch(sql=sql)
     users_mapping = {
         user["user_name"]: {
@@ -62,12 +64,13 @@ def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-async def get_current_user(token: str = Depends(oauth2_scheme)):
+async def get_current_user(token: str = Depends(oauth2_scheme), db = Depends(get_session)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Não foi possível validar as credenciais",
         headers={"WWW-Authenticate": "Bearer"},
     )
+    users = await get_users(db)
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub")
@@ -75,7 +78,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    user = get_user(fake_users_db, username)
+    user = get_user(users, username)
     if user is None:
         raise credentials_exception
     return user
