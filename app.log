@@ -1,0 +1,14 @@
+2025-02-04 20:59:55,942 - EasyImovelAPI - INFO - Static files mounted at /static
+2025-02-04 20:59:55,984 - uvicorn.error - INFO - Started server process [11944]
+2025-02-04 20:59:55,985 - uvicorn.error - INFO - Waiting for application startup.
+2025-02-04 20:59:55,985 - uvicorn.error - INFO - Application startup complete.
+2025-02-04 20:59:55,987 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-02-04 21:04:50,987 - uvicorn.error - INFO - Shutting down
+2025-02-04 21:04:51,088 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-02-04 21:04:51,089 - uvicorn.error - INFO - Application shutdown complete.
+2025-02-04 21:04:51,090 - uvicorn.error - INFO - Finished server process [11944]
+2025-02-04 21:04:52,988 - EasyImovelAPI - INFO - Static files mounted at /static
+2025-02-04 21:04:53,011 - uvicorn.error - INFO - Started server process [11987]
+2025-02-04 21:04:53,012 - uvicorn.error - INFO - Waiting for application startup.
+2025-02-04 21:04:53,012 - uvicorn.error - INFO - Application startup complete.
+2025-02-04 21:04:53,013 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
