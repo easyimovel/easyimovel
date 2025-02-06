@@ -9,5 +9,5 @@ docker build --build-arg ENV_FILE=$ENV_FILE -t easyimovel_api:latest .
 docker tag easyimovel_api:latest muhrilobianco/easyimovel_api:latest
 if [ "$1" = "prod" ]; then
 	docker login
-	docker push muhrilobianco/easyimove_api:latest
+	docker push muhrilobianco/easyimovel_api:latest
 fi
