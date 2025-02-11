@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi_versioning import VersionedFastAPI
 from fastapi.staticfiles import StaticFiles
 
-from app.routers import web_scrappy
+from app.routers import urls
 from app.routers import auth
 
 from app.utils.auth import get_current_user
@@ -29,7 +29,7 @@ description = """EasyImovelAPI"""
 summary = "API EasyImovel"
 
 tags_metadata = [
-    {"name": "EasyImovelScrapper", "description": "Web scrappy"},
+    {"name": "EasyImovelURLScrapper", "description": "Scrap URLS"},
 ]
 
 app_base = FastAPI(
@@ -53,9 +53,9 @@ app_base.include_router(
 
 # WebScrapp
 app_base.include_router(
-    web_scrappy.router,
-    tags=["EasyImovelScrapper"],
-    prefix="/web_scrappy",
+    urls.router,
+    tags=["EasyImovelURLScrapper"],
+    prefix="/urls",
     dependencies=[Depends(get_current_user), Depends(DB)]
 )
 

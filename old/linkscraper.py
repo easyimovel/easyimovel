@@ -4,10 +4,17 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import os
 import time
+from urllib.parse import urlencode
 from datetime import datetime
 
 base_url = 'https://www.olx.com.br/imoveis/venda/estado-ba/grande-salvador/salvador'
-driver_path = "chromedriver.exe"
+driver_path = "./chromedriver"
+
+def get_scrapeops_url(url):
+    api_key = "d4a17a9b-ea30-4d85-aae8-3ce14df28f41"
+    payload = {"api_key": api_key, "url": url}
+    proxy_url = "https://proxy.scrapeops.io/v1/?" + urlencode(payload)
+    return proxy_url
 
 # Verifica se o ChromeDriver está no caminho especificado
 if not os.path.exists(driver_path):
@@ -16,6 +23,10 @@ if not os.path.exists(driver_path):
 # Configurando o driver do Selenium
 service = Service(driver_path)
 options = Options()
+options.add_argument('--headless')  # Ensures Chrome runs without UI
+options.add_argument('--no-sandbox')  # Bypass the sandbox for headless usage
+options.add_argument('--disable-dev-shm-usage')  # Fix potential issues in Docker environments
+options.add_argument('--remote-debugging-port=9222')  # DevTools connection
 options.add_argument("--disable-blink-features=AutomationControlled")
 
 driver = webdriver.Chrome(service=service, options=options)
@@ -36,20 +47,27 @@ try:
         # Construindo a URL da página
         url = base_url if page == 1 else f"{base_url}?o={page}"
         print(f"Acessando: {url}")
-        driver.get(url)
+        driver.get(get_scrapeops_url(url))
         time.sleep(3)  # Aguarda o carregamento da página
+        driver.get_screenshot_as_file('screenshot.png') 
+
+
 
         # Encontrando os links de anúncios
-        ad_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-ds-component="DS-NewAdCard-Link"]')
-        for ad in ad_links:
-            link = ad.get_attribute("href")
-            if link and link not in all_links:  # Evita duplicados e links nulos
-                all_links.append(link)
+        links = driver.find_elements(By.XPATH, '//a[@data-ds-component="DS-NewAdCard-Link"]')
+        print(f"peguei todos os links {len(links)}", [link.get_attribute('href') for link in links])
+        for _link in [link.get_attribute('href') for link in links]:
+            
+            if _link and _link not in all_links:  # Evita duplicados e links nulos
+                print("peguei link", _link)
+                all_links.append(_link)
 
     # Salvando os links em um arquivo
-    with open(output_file, 'w', encoding='utf-8') as file:
-        for link in all_links:
-            file.write(link + '\n')
+    # with open(output_file, 'w', encoding='utf-8') as file:
+    #     for link in all_links:
+    #         file.write(link + '\n')
+
+    print(all_links)
 
     print(f"Coleta concluída! {len(all_links)} links salvos em '{output_file}'.")
 

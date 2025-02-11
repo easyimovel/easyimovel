@@ -1,9 +1,11 @@
 import argparse
 import logging
 
+from dotenv import load_dotenv
 from pprint import pprint, pformat
+from requests_olx import OLX
 
-from requests import OLX
+load_dotenv()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -15,7 +17,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger("OLX GetLinks")
 
-def main():
+def main(action: str):
+    olx = OLX(logger)
+    olx.get_links()
     logger.debug("foi")
 
 
