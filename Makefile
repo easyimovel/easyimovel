@@ -7,3 +7,7 @@ prod:
 .PHONY: db_upgrade
 db_upgrade:
 	source venv/bin/activate && python migrations/db_upgrade.py up
+
+.PHONY: db_downgrade
+db_downgrade:
+	source venv/bin/activate && python migrations/db_upgrade.py down $(action)
