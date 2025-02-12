@@ -1,0 +1,4 @@
+venv/
+old/
+app.log
+build.sh
