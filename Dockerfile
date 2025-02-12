@@ -12,6 +12,7 @@ COPY ./. .
 COPY $ENV_FILE .env
 RUN pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
 RUN chmod +x /usr/src/environments/easyimovel/entrypoint.sh
+RUN chmod +x /usr/src/environments/easyimove/services/chromedriver
 COPY crontab /etc/cron.d/olx-cron
 RUN chmod 0644 /etc/cron.d/olx-cron
 RUN crontab /etc/cron.d/olx-cron
