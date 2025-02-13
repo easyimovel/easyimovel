@@ -64,6 +64,20 @@ class DB:
                 rowcount = cursor.rowcount
                 await conn.commit()
                 return rowcount
+
+    async def column_exists(self, table_name, column_name):
+        sql = f"""
+        SELECT COUNT(*) AS 'exists'
+        FROM information_schema.columns 
+        WHERE table_name = 'urls' 
+        AND column_name = 'scrap_done'
+        AND table_schema = '{os.environ['DATABASE_NAME']}';
+        """
+        async with connect(**self.config) as conn:
+            async with conn.cursor(cursor=DictCursor) as cursor:
+                await cursor.execute(sql)
+                row = await cursor.fetchone()
+                return bool(row["exists"])
             
 def get_session():
     db = DB()

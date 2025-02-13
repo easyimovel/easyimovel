@@ -1,5 +1,6 @@
 import requests
 import logging
+import json
 
 from datetime import datetime, date
 from typing_extensions import TypedDict
@@ -40,3 +41,25 @@ async def post_urls(
     rows_affected = await db.insertmany(sql, urls)
     rows_updated = int(rows_affected-len(urls))
     return JSONResponse(status_code=201, content={"detail": f"{rows_affected} rows were inserted successfully. {rows_updated} rows were updated successfully"})
+
+@router.get(
+    "/get_urls",
+    status_code=status.HTTP_200_OK,
+    response_model=None,
+)
+@version(1, 0)
+async def get_urls(
+    request: Request,
+    platform: Annotated[str, Query(description="Plataforma de busca")],
+    db = Depends(get_session),
+) -> JSONResponse:
+
+    sql = """
+    SELECT url FROM urls
+    WHERE scrap_done = FALSE
+    AND platform = %s
+    AND disable = FALSE
+    """
+    result = await db.fetch(sql, (platform, ))
+    data = [list(item.values())[0] for item in result if 'url' in item]
+    return JSONResponse(status_code=200, content={"count": len(data), "list": data})
